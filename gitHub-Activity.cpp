@@ -31,9 +31,21 @@ int main() {
         mergedArray[num1 + i] = array2[i];
     }
 
-    // Display merged array
     int mergedSize = num1 + num2;
-    cout << "Merged Array: ";
+
+    // Sorting the merged array
+    for (int i = 0; i < mergedSize - 1; i++) {
+        for (int j = i + 1; j < mergedSize; j++) {
+            if (mergedArray[i] > mergedArray[j]) {
+                int temp = mergedArray[i];
+                mergedArray[i] = mergedArray[j];
+                mergedArray[j] = temp;
+            }
+        }
+    }
+
+    // Display sorted merged array
+    cout << "Sorted Merged Array: ";
     for (int i = 0; i < mergedSize; i++) {
         cout << mergedArray[i] << " ";
     }
