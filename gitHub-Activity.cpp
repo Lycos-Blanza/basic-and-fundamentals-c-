@@ -5,6 +5,7 @@ int main() {
     int num1, num2;
     int array1[10];
     int array2[10];
+    int mergedArray[20];
 
     // Input for the first array
     cout << "Enter the number of elements for the first array (up to 10): ";
@@ -22,15 +23,19 @@ int main() {
         cin >> array2[i];
     }
 
-    // Display both arrays
-    cout << "First Array: ";
+    // Merging the arrays
     for (int i = 0; i < num1; i++) {
-        cout << array1[i] << " ";
+        mergedArray[i] = array1[i];
+    }
+    for (int i = 0; i < num2; i++) {
+        mergedArray[num1 + i] = array2[i];
     }
 
-    cout << "\nSecond Array: ";
-    for (int i = 0; i < num2; i++) {
-        cout << array2[i] << " ";
+    // Display merged array
+    int mergedSize = num1 + num2;
+    cout << "Merged Array: ";
+    for (int i = 0; i < mergedSize; i++) {
+        cout << mergedArray[i] << " ";
     }
 
     return 0;
